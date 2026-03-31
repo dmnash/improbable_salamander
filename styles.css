@@ -1,0 +1,461 @@
+:root {
+  /* Sky (branding header) */
+  --branding-bg: #CFEFED;
+
+  /* Sea (nav) */
+  --nav-bg: #2FA7B3;
+  --nav-text: #FFF8E8;
+  --nav-accent: #45BBC6;
+
+  /* Sand (breadcrumb / accent band) */
+  --accent: #E6C27A;
+
+  /* Content (air / seafoam) */
+  --bg: #EAF7F6;
+  --text: #123547;
+
+  /* Links (deep water) */
+  --link: #0B4F6C;
+  --linkhover: #C99A1A;
+
+  /* Breadcrumb specifics */
+  --breadcrumb-text: #2A2A2A;
+  --breadcrumb-link: #0B4F6C;
+
+  /* Footer (sunset coral) */
+  --footer-bg: #E07A5F;
+  --footer-text: #FFF3E6;
+  --footer-button: #E07A5F;
+  --footer-mouseover: #2FA7B3;
+}
+
+:root {
+  --branding-height: clamp(48px, 23vw, 150px);
+  --branding-font-size: clamp(0.85rem, 0.7rem + 0.6vw, 1rem);
+
+  --nav-height: clamp(2.25rem, 6vw, 3rem);
+  --nav-font-size: clamp(0.85rem, 0.7rem + 0.4vw, 1rem);
+
+  --crumb-height: clamp(1.25rem, 3.5vw, 1.75rem);
+  --crumb-font-size: clamp(0.65rem, 0.75rem + 0.75vw, 1.25rem);
+
+  --footer-height: clamp(1.5rem, 4vw, 2rem);
+  --footer-font-size: clamp(0.65rem, 0.75rem + 0.75vw, 1.25rem);
+}
+
+body.dark-mode {
+  /* Night sky (branding header) */
+  --branding-bg: #020d0f;
+
+  /* Dark sea (nav) */
+  --nav-bg: #1F6B75;
+  --nav-accent: #2B808B;
+  --nav-text: #F7F3E8;
+
+  /* Moonlit sand (breadcrumb / accent band) */
+  --accent: #B99A5A;
+
+  /* Deep night air / water */
+  --bg: #020d0f;
+  --text: #D7ECE8;
+
+  /* Links */
+  --link: #7FDDEA;
+  --linkhover: #E2C16F;
+
+  /* Breadcrumb specifics */
+  --breadcrumb-text: #E8E1D2;
+  --breadcrumb-link: #8EDFEB;
+
+  /* Sunset ember / warm footer */
+  --footer-bg: #A85F47;
+  --footer-text: #FFF1E3;
+  --footer-button: #A85F47;
+  --footer-mouseover: #1F6B75;
+}
+
+.header_branding {
+  height: var(--branding-height);
+  font-size: var(--branding-font-size);
+  background-color: var(--branding-bg);
+  background-image: url("assets/site/header_day.png");
+  background-size: contain;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+
+body.dark-mode .header_branding {
+  background-image: url("assets/site/header_night.png");
+  background-position: left top;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  padding: 0.1rem 0.1rem;
+  border-radius: 0.2rem;
+  transition: background-color 0.2s ease;
+}
+
+a:hover, 
+a:focus {
+  background-color: var(--linkhover);
+  color: var(--link);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 60rem;
+  margin: 1rem auto 5rem;
+  padding: 0 1rem;
+  line-height: 1.6;
+}
+
+.header_branding img {
+  height: clamp(48px, 12vw, 120px);
+  width: auto;
+  max-height: 150px;
+  max-width: 50vw;
+}
+
+.nav_wrapper {
+  position: relative;
+  z-index: 1000;
+}
+
+.header_navigation {
+  height: var(--nav-height);
+  font-size: var(--nav-font-size);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.1rem 0.25rem;
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  will-change: top;
+}
+
+#menu-toggle,
+#theme-toggle {
+  background: none;
+  border: none;
+  border-radius: 6px;
+  color: var(--nav-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+#menu-toggle:hover,
+#theme-toggle:hover {
+  outline: 1px solid var(--accent);
+  background-color: var(--accent);
+  color: var(--nav-bg);
+  font-weight: bold;
+}
+
+#menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 250px;
+  max-width: 80vw;
+  background-color: var(--nav-bg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  padding: 0.2rem;
+  z-index: 15;
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu li {
+  border-bottom: 1px solid var(--nav-bg);
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.05),
+    rgba(0,0,0,0.12)
+  );
+}
+
+#menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--nav-text);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#menu a:hover {
+  background: var(--accent);
+  color: var(--nav-bg);
+  font-weight: bold;
+}
+
+#menu li:last-child {
+  border-bottom: none;
+}
+
+.header_navigation_right {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.search {
+  position: relative;
+}
+
+.search input {
+  background-color: var(--nav-accent);
+  color: var(--nav-text);
+  padding: 0.4rem 1rem 0.2rem 1rem;
+  border-radius: 9999px;
+  border: 2px solid color-mix(in srgb, var(--nav-accent) 70%, black 30%);
+  font-size: 0.9rem;
+  width: 40vw;
+  max-width: 24ch;
+  min-width: 10ch;
+}
+
+.search input::placeholder {
+  color: color-mix(in srgb, var(--nav-text) 60%, var(--nav-accent));
+}
+
+.search button {
+  position: absolute;
+  right: 0.4rem;
+  background: none;
+  border: none;
+  color: var(--nav-text);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.search button:hover {
+  color: var(--accent);
+}
+
+.breadcrumb {
+  background-color: var(--accent);
+  color: var(--breadcrumb-text);
+  height: var(--breadcrumb-height);
+  font-size: var(--breadcrumb-height);
+  padding: 0.25rem 0.5rem;
+  position: relative;
+  z-index: 500;
+}
+
+.breadcrumb a {
+  color: var(--breadcrumb-link);
+  text-decoration: none;
+  padding: 0.1rem 0.25rem;
+  border-radius: 0.2rem;
+  transition: background-color 0.2s ease;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus {
+  background-color: var(--linkhover);
+  color: var(--nav-bg);
+}
+
+h1 {
+  text-align: center;
+}
+
+.footer-fixed {
+  background-color: var(--footer-bg);
+  height: var(--footer-height);
+  font-size: var(--footer-font-size);
+  color: var(--footer-text);
+  padding: 0.2rem 0.25rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer a {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  background-color: var(--footer-button);
+  color: var(--footer-text);
+  text-decoration: none;
+  line-height: 1.2;
+  transition: background-color 0.2s ease, color 0.2s ease, outline 0.2s ease;
+}
+
+footer a:hover {
+  outline: 2px solid var(--nav-text);
+  background-color: var(--footer-mouseover);
+  color: var(--nav-text);
+  font-weight: bold;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.25rem;
+  font: inherit;
+}
+
+.contact-form button {
+  background-color: var(--footer-button);
+  color: var(--footer-text);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact-form button:hover {
+  background-color: var(--footer-mouseover);
+  color: var(--footer-text);
+}
+
+.collapsible {
+  cursor: pointer;
+  background-color: var(--accent);
+  color: var(--nav-bg);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.collapsible:hover {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+}
+
+.collapsible-section .content {
+  display: none;
+  margin: 0.5rem 0;
+}
+
+.collapsible-section.active .content {
+  display: block;
+}
+
+.collapsible-section img {
+  display: block;
+  margin: 0 auto;
+  height: 50vh;
+  max-width: 70vw;
+  max-height: 400px;
+  width: auto;
+  object-fit: contain;
+}
+
+.carousel {
+  position: relative;
+  width: 25vw;
+  max-width: 120px;
+  height: calc(100vh - 140px - 40px);
+  max-height: 560px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5 rem;
+  width: 100%;
+  animation: scroll-vertical 90s linear infinite;
+}
+
+.carousel-track img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes scroll-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+/* Horizontal Carousel Styles */
+.carousel-horizontal {
+  position: relative;
+  width: 100%;
+  max-width: 95dvw;
+  height: auto;
+  max-height: 15dvh;
+  overflow: hidden;
+  margin: 1rem auto;
+}
+
+.carousel-track-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  width: 100%;
+  animation: scroll-horizontal 45s linear infinite;
+}
+
+.carousel-track-horizontal img {
+  width: auto;
+  height: 100%;
+  max-height: 15dvh;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-horizontal {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.content-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.content-column {
+  min-width: 0;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>visit Taniti</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="header_branding">
+                <!--
+                <a href="home.html" class="logo">
+                    <img src="assets\images\img-placeholder.png" alt="Paradigm Pet Professionals logo">
+                </a>
+                -->
+            </div>
+        </header>
+
+        <div class="header_navigation">
+            <button id="menu-toggle" aria-label="Menu">&#x2630;</button>
+            <nav id="menu" hidden>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">Visitor Information</a></li>
+                    <li><a href="activities.html">Things To Do</a></li>
+                    <li><a href="lodging.html">Places To Stay</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="transportation.html">Transportation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header_navigation_right">
+                <div class="search">
+                    <input id="search_pill" type="text" placeholder="search... (disabled)">
+                    <button>&#x1F50E;&#xFE0E;</button>
+                </div>
+                <button id="theme-toggle" aria-label="Toggle light/dark mode">◑</button>
+            </div>
+        </div>
+        <div class="breadcrumb"><a href="home.html">Home</a> > Transportation</div>
+        
+        <main>
+            <section class="transport-hero">
+                <h1>Transportation</h1>
+                <p>Getting around Taniti is easy and convenient. Whether you prefer public transit, rental vehicles, or guided tours, we offer multiple options to help you explore the island at your own pace.</p>
+            </section>
+
+            <aside class="carousel-horizontal">
+                <div class="carousel-track-horizontal">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                </div>
+            </aside>
+
+            <section class="transport-grid">
+                <article class="transport-card">
+                    <h2>Car Rentals</h2>
+                    <p>Rent a car and explore the island on your own schedule. Multiple rental agencies offer a variety of vehicles from economy to luxury. Valid international driver's license required.</p>
+                </article>
+
+                <article class="transport-card">
+                    <h2>Taxis & Ride Sharing</h2>
+                    <p>Convenient taxi services and ride-sharing apps are available throughout the island. Fixed routes and competitive pricing make taxis an affordable way to get around without driving.</p>
+                </article>
+
+                <article class="transport-card">
+                    <h2>Public Transit</h2>
+                    <p>Affordable and efficient bus system serving major towns and attractions. Buses run regularly throughout the day and evening. Perfect for budget travelers and those who prefer not to drive.</p>
+                </article>
+
+                <article class="transport-card">
+                    <h2>Scooter & Bicycle Rentals</h2>
+                    <p>Rent scooters or bicycles for a fun way to explore coastal areas and local neighborhoods. Great for shorter distances and experiencing the island up close.</p>
+                </article>
+
+                <article class="transport-card">
+                    <h2>Guided Tours</h2>
+                    <p>Join organized tours led by knowledgeable local guides. Tours include transportation and cover major attractions, cultural sites, and hidden gems throughout the island.</p>
+                </article>
+
+                <article class="transport-card">
+                    <h2>Water Taxis & Ferries</h2>
+                    <p>Travel between islands and coastal areas by water. Regular ferry services connect Taniti with nearby islands, offering scenic routes and unique perspectives of the archipelago.</p>
+                </article>
+            </section>
+
+            <section class="transport-cta">
+                <h2>Plan Your Journey</h2>
+                <p>Check out our <a href="activities.html">activities</a>, find your ideal <a href="lodging.html">accommodation</a>, and discover amazing <a href="dining.html">restaurants</a>. Questions about transportation? <a href="contact.html">Contact us anytime</a>.</p>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-fixed">
+                <div class="home-link"><a href="home.html">home</a></div>
+                <div class="contact-link"><a href="contact.html">contact</a></div>
+            </div>
+        </footer>
+
+        <script>
+            const menuToggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+
+            menuToggle.addEventListener("click", (e) => {
+                menu.hidden = !menu.hidden;
+                e.stopPropagation();
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!menu.contains(e.target) && e.target !== menuToggle) {
+                menu.hidden = true;
+                }
+            });
+
+            if (localStorage.theme === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+
+            const themeToggle = document.getElementById("theme-toggle");
+
+            themeToggle.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+                localStorage.theme = document.body.classList.contains("dark-mode")
+                    ? "dark"
+                    : "light";
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>visit Taniti</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="header_branding">
+                <!--
+                <a href="home.html" class="logo">
+                    <img src="assets\images\img-placeholder.png" alt="Paradigm Pet Professionals logo">
+                </a>
+                -->
+            </div>
+        </header>
+
+        <div class="header_navigation">
+            <button id="menu-toggle" aria-label="Menu">&#x2630;</button>
+            <nav id="menu" hidden>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">Visitor Information</a></li>
+                    <li><a href="activities.html">Things To Do</a></li>
+                    <li><a href="lodging.html">Places To Stay</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="transportation.html">Transportation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header_navigation_right">
+                <div class="search">
+                    <input id="search_pill" type="text" placeholder="search... (disabled)">
+                    <button>&#x1F50D;&#xFE0E;</button>
+                </div>
+                <button id="theme-toggle" aria-label="Toggle light/dark mode">◑</button>
+            </div>
+        </div>
+        <div class="breadcrumb">Home</div>
+        
+        <main>
+
+            <div class="content-row">
+                <div class="content-column">
+                    <h3>
+                        Welcome to Taniti
+                    </h3>
+
+                    <p>
+                        Discover a tropical paradise where pristine beaches meet vibrant culture. Taniti is your ideal destination for unforgettable island adventures, relaxation, and authentic experiences. Whether you seek adventure, culinary delights, or peaceful getaways, our island welcomes you with warm hospitality and endless possibilities.
+                    </p>
+
+                    <section class="bullet_list">
+                        <ul>
+                            <li>World-class beaches and water activities</li>
+                            <li>Rich cultural experiences and local traditions</li>
+                            <li>Diverse dining from local to international cuisine</li>
+                            <li>Comfortable accommodations for every budget</li>
+                        </ul>
+                    </section>
+
+                    <p>
+                        Plan your perfect Taniti getaway today. Browse our <a href="activities.html">activities</a>, explore <a href="lodging.html">places to stay</a>, or learn more <a href="about.html">about visiting</a>. With convenient transportation and friendly locals, your island escape awaits.
+                    </p>
+                </div>
+
+                <aside class="carousel">
+                    <div class="carousel-track">
+                        <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                        <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                        <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                        <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                        <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                        <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                        <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                        <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                        <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                        <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    </div>
+                </aside>
+            </div> 
+
+        </main>
+
+        <footer>
+            <div class="footer-fixed">
+                <div class="home-link"><a href="home.html">home</a></div>
+                <div class="contact-link"><a href="contact.html">contact</a></div>
+            </div>
+        </footer>
+
+        <script>
+            const menuToggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+
+            menuToggle.addEventListener("click", (e) => {
+                menu.hidden = !menu.hidden;
+                e.stopPropagation();
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!menu.contains(e.target) && e.target !== menuToggle) {
+                menu.hidden = true;
+                }
+            });
+
+            if (localStorage.theme === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+
+            const themeToggle = document.getElementById("theme-toggle");
+
+            themeToggle.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+                localStorage.theme = document.body.classList.contains("dark-mode")
+                    ? "dark"
+                    : "light";
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>visit Taniti</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="header_branding">
+                <!--
+                <a href="home.html" class="logo">
+                    <img src="assets\images\img-placeholder.png" alt="Paradigm Pet Professionals logo">
+                </a>
+                -->
+            </div>
+        </header>
+
+        <div class="header_navigation">
+            <button id="menu-toggle" aria-label="Menu">&#x2630;</button>
+            <nav id="menu" hidden>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">Visitor Information</a></li>
+                    <li><a href="activities.html">Things To Do</a></li>
+                    <li><a href="lodging.html">Places To Stay</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="transportation.html">Transportation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header_navigation_right">
+                <div class="search">
+                    <input id="search_pill" type="text" placeholder="search... (disabled)">
+                    <button>&#x1F50E;&#xFE0E;</button>
+                </div>
+                <button id="theme-toggle" aria-label="Toggle light/dark mode">◑</button>
+            </div>
+        </div>
+        <div class="breadcrumb"><a href="home.html">Home</a> > Things To Do</div>
+        
+        <main>
+            <section class="activities-hero">
+                <h1>Things To Do</h1>
+                <p>Discover an island paradise filled with adventure, relaxation, and unforgettable experiences. From pristine beaches to cultural attractions, Taniti has something for every traveler.</p>
+            </section>
+
+            <aside class="carousel-horizontal">
+                <div class="carousel-track-horizontal">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                </div>
+            </aside>
+
+            <section class="activities-grid">
+                <article class="activity-card">
+                    <h2>Beaches & Water Activities</h2>
+                    <p>Experience the crystal-clear waters and white sand beaches of Taniti. Enjoy swimming, snorkeling, surfing, or paddleboarding at our world-class beaches. Perfect for families and adventure seekers alike.</p>
+                </article>
+
+                <article class="activity-card">
+                    <h2>Hiking & Nature Trails</h2>
+                    <p>Explore the lush tropical landscape through guided nature hikes. Discover exotic wildlife, stunning viewpoints, and hidden waterfalls. Trails range from easy walks to challenging mountain climbs.</p>
+                </article>
+
+                <article class="activity-card">
+                    <h2>Cultural Experiences</h2>
+                    <p>Immerse yourself in Tanitian culture by visiting local markets, museums, and festivals. Learn traditional crafts, sample authentic cuisine, and connect with the island's vibrant communities.</p>
+                </article>
+
+                <article class="activity-card">
+                    <h2>Water Sports & Adventures</h2>
+                    <p>For thrill-seekers, enjoy kayaking, deep-sea diving, parasailing, and jet skiing. Our experienced guides ensure safe and exciting adventures on the island's beautiful waters.</p>
+                </article>
+
+                <article class="activity-card">
+                    <h2>Scenic Tours & Sightseeing</h2>
+                    <p>Take guided tours to see the island's most iconic landmarks and natural wonders. Visit ancient temples, botanical gardens, and viewpoints that offer breathtaking vistas of the surrounding ocean.</p>
+                </article>
+
+                <article class="activity-card">
+                    <h2>Relaxation & Wellness</h2>
+                    <p>Unwind with spa treatments, yoga sessions on the beach, or peaceful meditation retreats. Find your zen in tropical settings designed for ultimate relaxation and rejuvenation.</p>
+                </article>
+            </section>
+
+            <section class="activities-cta">
+                <h2>Ready to Explore?</h2>
+                <p>Browse our <a href="lodging.html">accommodations</a>, check out our <a href="dining.html">dining options</a>, and learn about <a href="transportation.html">getting around the island</a>. For more information, feel free to <a href="contact.html">contact us</a>.</p>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-fixed">
+                <div class="home-link"><a href="home.html">home</a></div>
+                <div class="contact-link"><a href="contact.html">contact</a></div>
+            </div>
+        </footer>
+
+        <script>
+            const menuToggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+
+            menuToggle.addEventListener("click", (e) => {
+                menu.hidden = !menu.hidden;
+                e.stopPropagation();
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!menu.contains(e.target) && e.target !== menuToggle) {
+                menu.hidden = true;
+                }
+            });
+
+            if (localStorage.theme === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+
+            const themeToggle = document.getElementById("theme-toggle");
+
+            themeToggle.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+                localStorage.theme = document.body.classList.contains("dark-mode")
+                    ? "dark"
+                    : "light";
+            });
+        </script>
+    </body>
+</html>

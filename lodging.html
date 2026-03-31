@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>visit Taniti</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="header_branding">
+                <!--
+                <a href="home.html" class="logo">
+                    <img src="assets\images\img-placeholder.png" alt="Paradigm Pet Professionals logo">
+                </a>
+                -->
+            </div>
+        </header>
+
+        <div class="header_navigation">
+            <button id="menu-toggle" aria-label="Menu">&#x2630;</button>
+            <nav id="menu" hidden>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">Visitor Information</a></li>
+                    <li><a href="activities.html">Things To Do</a></li>
+                    <li><a href="lodging.html">Places To Stay</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="transportation.html">Transportation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header_navigation_right">
+                <div class="search">
+                    <input id="search_pill" type="text" placeholder="search... (disabled)">
+                    <button>&#x1F50E;&#xFE0E;</button>
+                </div>
+                <button id="theme-toggle" aria-label="Toggle light/dark mode">◑</button>
+            </div>
+        </div>
+        <div class="breadcrumb"><a href="home.html">Home</a> > Places To Stay</div>
+        
+        <main>
+            <section class="lodging-hero">
+                <h1>Places To Stay</h1>
+                <p>Taniti offers a variety of accommodations to suit every traveler's needs and budget. From luxury resorts to cozy family-run lodges, find your perfect island retreat and create lasting memories.</p>
+            </section>
+
+            <aside class="carousel-horizontal">
+                <div class="carousel-track-horizontal">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                </div>
+            </aside>
+
+            <section class="lodging-grid">
+                <article class="lodging-card">
+                    <h2>Luxury Resorts</h2>
+                    <p>Experience ultimate indulgence at our premier all-inclusive resorts. Enjoy world-class amenities, spa treatments, multiple pools, beautiful beaches, and gourmet dining options.</p>
+                </article>
+
+                <article class="lodging-card">
+                    <h2>Boutique Hotels</h2>
+                    <p>Stay in charming, intimate hotels with personalized service. Each boutique property offers unique character, local décor, and a more authentic Tanitian hospitality experience.</p>
+                </article>
+
+                <article class="lodging-card">
+                    <h2>Beach Villas & Bungalows</h2>
+                    <p>Rent private beachfront villas and traditional bungalows for a romantic getaway or family vacation. Wake up to ocean views and enjoy the privacy of your own tropical paradise.</p>
+                </article>
+
+                <article class="lodging-card">
+                    <h2>Mid-Range Hotels</h2>
+                    <p>Comfortable, well-appointed hotels offering excellent value for your money. These properties feature modern amenities, friendly staff, and convenient locations throughout the island.</p>
+                </article>
+
+                <article class="lodging-card">
+                    <h2>Guesthouses & B&Bs</h2>
+                    <p>Experience warm island hospitality at cozy guesthouses and bed & breakfasts. Perfect for budget-conscious travelers and those seeking a more personal, home-like experience.</p>
+                </article>
+
+                <article class="lodging-card">
+                    <h2>Holiday Apartments</h2>
+                    <p>Stay in fully-equipped apartments with kitchens and living spaces. Ideal for families or groups wanting to cook their own meals and enjoy longer stays with more independence.</p>
+                </article>
+            </section>
+
+            <section class="lodging-cta">
+                <h2>Ready to Book?</h2>
+                <p>Explore <a href="activities.html">things to do</a> during your stay, discover <a href="dining.html">dining options</a>, and learn how to <a href="transportation.html">get around</a>. Have questions? <a href="contact.html">Contact us</a> for more information.</p>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-fixed">
+                <div class="home-link"><a href="home.html">home</a></div>
+                <div class="contact-link"><a href="contact.html">contact</a></div>
+            </div>
+        </footer>
+
+        <script>
+            const menuToggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+
+            menuToggle.addEventListener("click", (e) => {
+                menu.hidden = !menu.hidden;
+                e.stopPropagation();
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!menu.contains(e.target) && e.target !== menuToggle) {
+                menu.hidden = true;
+                }
+            });
+
+            if (localStorage.theme === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+
+            const themeToggle = document.getElementById("theme-toggle");
+
+            themeToggle.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+                localStorage.theme = document.body.classList.contains("dark-mode")
+                    ? "dark"
+                    : "light";
+            });
+        </script>
+    </body>
+</html>
