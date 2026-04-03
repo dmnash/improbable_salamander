@@ -27,7 +27,7 @@
                     <li><a href="lodging.html">Places To Stay</a></li>
                     <li><a href="dining.html">Dining</a></li>
                     <li><a href="transportation.html">Transportation</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li id="contact"><a href="contact.html">contact</a></li>
                 </ul>
             </nav>
             <div class="header_navigation_right">
@@ -38,78 +38,80 @@
                 <button id="theme-toggle" aria-label="Toggle light/dark mode">◑</button>
             </div>
         </div>
-        <div class="breadcrumb"><a href="home.html">Home</a> > Contact</div>
+        <div class="breadcrumb"></div>
         
-        <main>
-            <section class="contact-hero">
-                <h1>Contact Us</h1>
-                <p>Have questions about visiting Taniti? We'd love to hear from you! Fill out the form below and our team will respond as soon as possible.</p>
-            </section>
+<main>
+    <section class="contact-hero">
+        <h1>Contact</h1>
+        <p>If you have questions about visiting Taniti, use the form below to request more information about lodging, activities, transportation, dining, or general trip planning.</p>
+    </section>
 
-            <section class="contact-form-container">
-                <form class="contact-form" action="#" method="post">
-                    <fieldset>
-                        <legend>Get In Touch</legend>
+    <section class="contact-form-container">
+        <form class="contact-form" action="#" method="post">
+            <fieldset>
+                <legend>Send a Question</legend>
 
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">-- Select a subject --</option>
-                                <option value="accommodations">Accommodations</option>
-                                <option value="activities">Activities & Tours</option>
-                                <option value="dining">Dining Recommendations</option>
-                                <option value="transportation">Transportation</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
-                        </div>
-
-                        <div class="form-actions">
-                            <button type="submit" class="btn-submit">Send Message</button>
-                            <button type="reset" class="btn-reset">Clear Form</button>
-                        </div>
-                    </fieldset>
-                </form>
-            </section>
-
-            <section class="contact-info">
-                <h2>Other Ways to Reach Us</h2>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <h3>Email</h3>
-                        <p><a href="mailto:info@taniti.com">info@taniti.com</a></p>
-                    </div>
-                    <div class="info-item">
-                        <h3>Phone</h3>
-                        <p><a href="tel:+1-555-TANITI-1">+1-555-TANITI-1</a></p>
-                    </div>
-                    <div class="info-item">
-                        <h3>Hours</h3>
-                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
-                    </div>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required>
                 </div>
-            </section>
-        </main>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="lodging">Places to Stay</option>
+                        <option value="activities">Things To Do</option>
+                        <option value="dining">Dining</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="visitor-info">Visitor Information</option>
+                        <option value="general">General Question</option>
+                    </select>
+                </div>
+
+                <div class="form-group form-group-full">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Send Message</button>
+                    <button type="reset" class="btn-reset">Clear Form</button>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+
+    <section class="contact-info">
+        <h2>Questions We Can Help With</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <h3>Lodging</h3>
+                <p>Ask about hotels, bed and breakfasts, the hostel, or the island resort.</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Activities</h3>
+                <p>Request information about beaches, rainforest tours, snorkeling, fishing tours, and other attractions.</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Travel Planning</h3>
+                <p>Ask about transportation, visitor information, and planning a stay in Taniti City or Merriton Landing.</p>
+            </div>
+        </div>
+    </section>
+</main>
 
         <footer>
             <div class="footer-fixed">
