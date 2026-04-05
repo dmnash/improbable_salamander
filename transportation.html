@@ -9,11 +9,9 @@
     <body>
         <header>
             <div class="header_branding">
-                <!--
-                <a href="home.html" class="logo">
-                    <img src="assets\images\img-placeholder.png" alt="Paradigm Pet Professionals logo">
+                <a href="home.html" class="branding_link">
+                    <img class="branding_logo" src="assets/site/header_day.png" alt="Home">
                 </a>
-                -->
             </div>
         </header>
 
@@ -48,15 +46,12 @@
 
             <aside class="carousel-horizontal">
                 <div class="carousel-track-horizontal">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <a href="#citation-1"><img src="assets/content/transportation_1.avif" alt="Woman and airplane illustration"></a>
+                    <a href="#citation-2"><img src="assets/content/transportation_2.avif" alt="Bus with tropical mural and palm tree"></a>
+                    <a href="#citation-3"><img src="assets/content/transportation_3.avif" alt="Person swimming in ocean with cruise ship in distance"></a>
+                    <a href="#citation-4"><img src="assets/content/transportation_4.avif" alt="Bikes are parked by a beautiful, turquoise beach"></a>
+                    <a href="#citation-5"><img src="assets/content/transportation_5.avif" alt="A road winds through palm trees in the tropics."></a>
+                    <a href="#citation-6"><img src="assets/content/transportation_6.avif" alt="White and blue airplane on railway during daytime"></a>
                 </div>
             </aside>
 
@@ -98,6 +93,18 @@
             </section>
         </main>
 
+        <section class="collapsible-section">
+            <h3 id="citation_header" class="collapsible">citations</h3>
+            <div class="content">
+                <p id="citation-1" class="citation">Kornakov, A. (2019). <em>Woman and airplane illustration</em>. [Photograph]. Unsplash. https://unsplash.com/photos/woman-and-airplane-illustration-Q8l7867qU_8</p>
+                <p id="citation-2" class="citation">Snap Wander. (2025). <em>Bus with tropical mural and palm tree</em>. [Photograph]. Unsplash. https://unsplash.com/photos/bus-with-tropical-mural-and-palm-tree-WGenHP1VU20</p>
+                <p id="citation-3" class="citation">Schuster, S. (2025). <em>Person swimming in ocean with cruise ship in distance</em>. [Photograph]. Unsplash. https://unsplash.com/photos/person-swimming-in-ocean-with-cruise-ship-in-distance-_mHYhhkbPXA</p>
+                <p id="citation-4" class="citation">Tong, H. (2025). <em>Bikes are parked by a beautiful, turquoise beach</em>. [Photograph]. Unsplash. https://unsplash.com/photos/bikes-are-parked-by-a-beautiful-turquoise-beach-9yIufSHcdUQ</p>
+                <p id="citation-5" class="citation">Stephenson, M. (2025). <em>A road winds through palm trees in the tropics.</em> [Photograph]. Unsplash. https://unsplash.com/photos/a-road-winds-through-palm-trees-in-the-tropics-CbnFbqY_5zE</p>
+                <p id="citation-6" class="citation">Jiménez Macías, J. A. (2019). <em>White and blue airplane on railway during daytime</em>. [Photograph]. Unsplash. https://unsplash.com/photos/white-and-blue-airplane-on-railway-during-daytime-HlSdbJ13hCM</p>
+            </div>
+        </section>
+
         <footer>
             <div class="footer-fixed">
                 <div class="home-link"><a href="home.html">home</a></div>
@@ -131,6 +138,12 @@
                 localStorage.theme = document.body.classList.contains("dark-mode")
                     ? "dark"
                     : "light";
+            });
+
+            document.querySelectorAll(".collapsible").forEach(header => {
+                header.addEventListener("click", () => {
+                    header.parentElement.classList.toggle("active");
+                });
             });
         </script>
     </body>
