@@ -9,11 +9,9 @@
     <body>
         <header>
             <div class="header_branding">
-                <!--
-                <a href="home.html" class="logo">
-                    <img src="assets\images\img-placeholder.png" alt="Paradigm Pet Professionals logo">
+                <a href="home.html" class="branding_link">
+                    <img class="branding_logo" src="assets/site/header_day.png" alt="Home">
                 </a>
-                -->
             </div>
         </header>
 
@@ -48,16 +46,13 @@
 
             <aside class="carousel-horizontal">
                 <div class="carousel-track-horizontal">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <a href="#citation-1"><img src="assets/content/lodging_1.avif" alt="Person in black shorts sitting on brown wooden bench"></a>
+                    <a href="#citation-2"><img src="assets/content/lodging_2.avif" alt="Photo of brown bench near swimming pool"></a>
+                    <a href="#citation-3"><img src="assets/content/lodging_3.avif" alt="A bed sitting under a window next to a lush green forest"></a>
+                    <a href="#citation-4"><img src="assets/content/lodging_4.avif" alt="White table cloth on brown wooden table"></a>
+                    <a href="#citation-5"><img src="assets/content/lodging_5.avif" alt="Hotel reception desk with modern wooden furniture and seating."></a>
+                    <a href="#citation-6"><img src="assets/content/lodging_6.avif" alt="Blue and white hanging rope on brown wooden tree"></a>
+                    <a href="#citation-7"><img src="assets/content/lodging_7.avif" alt="A yellow and white building with a red roof"></a>
                 </div>
             </aside>
 
@@ -99,6 +94,19 @@
             </section>
         </main>
 
+        <section class="collapsible-section">
+            <h3 id="citation_header" class="collapsible">citations</h3>
+            <div class="content">
+                <p id="citation-1" class="citation">Tullius, T. (2020). <em>Person in black shorts sitting on brown wooden bench</em>. [Photograph]. Unsplash. https://unsplash.com/photos/person-in-black-shorts-sitting-on-brown-wooden-bench-pb7gfl7_Ni8</p>
+                <p id="citation-2" class="citation">Dubler, S. (2018). <em>Photo of brown bench near swimming pool</em>. [Photograph]. Unsplash. https://unsplash.com/photos/photo-of-brown-bench-near-swimming-pool-Koei_7yYtIo</p>
+                <p id="citation-3" class="citation">Rychkin, E. (2023). <em>A bed sitting under a window next to a lush green forest</em>. [Photograph]. Unsplash. https://unsplash.com/photos/a-bed-sitting-under-a-window-next-to-a-lush-green-forest-7kMotWfqjVQ</p>
+                <p id="citation-4" class="citation">Nguyễn, H. (2021). <em>White table cloth on brown wooden table</em>. [Photograph]. Unsplash. https://unsplash.com/photos/white-table-cloth-on-brown-wooden-table-Jgytv-0OFpk</p>
+                <p id="citation-5" class="citation">Wang, N. (2025). <em>Hotel reception desk with modern wooden furniture and seating.</em> [Photograph]. Unsplash. https://unsplash.com/photos/hotel-reception-desk-with-modern-wooden-furniture-and-seating-kfnWOD1Tbp8</p>
+                <p id="citation-6" class="citation">Monthay, V. (2021). <em>Blue and white hanging rope on brown wooden tree</em>. [Photograph]. Unsplash. https://unsplash.com/photos/blue-and-white-hanging-rope-on-brown-wooden-tree-eZq4CUtMqZ8</p>
+                <p id="citation-7" class="citation">Abraham, M. (2022). <em>A yellow and white building with a red roof</em>. [Photograph]. Unsplash. https://unsplash.com/photos/a-yellow-and-white-building-with-a-red-roof-whle5eAZiFs</p>
+            </div>
+        </section>
+
         <footer>
             <div class="footer-fixed">
                 <div class="home-link"><a href="home.html">home</a></div>
@@ -132,6 +140,12 @@
                 localStorage.theme = document.body.classList.contains("dark-mode")
                     ? "dark"
                     : "light";
+            });
+
+            document.querySelectorAll(".collapsible").forEach(header => {
+                header.addEventListener("click", () => {
+                    header.parentElement.classList.toggle("active");
+                });
             });
         </script>
     </body>

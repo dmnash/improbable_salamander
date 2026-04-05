@@ -9,11 +9,9 @@
     <body>
         <header>
             <div class="header_branding">
-                <!--
-                <a href="home.html" class="logo">
-                    <img src="assets\images\img-placeholder.png" alt="Paradigm Pet Professionals logo">
+                <a href="home.html" class="branding_link">
+                    <img class="branding_logo" src="assets/site/header_day.png" alt="Home">
                 </a>
-                -->
             </div>
         </header>
 
@@ -48,16 +46,13 @@
 
             <aside class="carousel-horizontal">
                 <div class="carousel-track-horizontal">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
-                    <img src="assets/site/img-placeholder.png" alt="placeholder image">
+                    <a href="#citation-1"><img src="assets/content/dining_1.avif" alt="Chef garnishes grilled octopus with greens and lemon"></a>
+                    <a href="#citation-2"><img src="assets/content/dining_2.avif" alt="Assorted drinking glasses with beverages"></a>
+                    <a href="#citation-3"><img src="assets/content/dining_3.avif" alt="People sitting on chair in restaurant"></a>
+                    <a href="#citation-4"><img src="assets/content/dining_4.avif" alt="Two filled glasses"></a>
+                    <a href="#citation-5"><img src="assets/content/dining_5.avif" alt="A person holding up a cone of food on a beach"></a>
+                    <a href="#citation-6"><img src="assets/content/dining_6.avif" alt="Baked hamburger on plate"></a>
+                    <a href="#citation-7"><img src="assets/content/dining_7.avif" alt="Person holding skewered meat"></a>
                 </div>
             </aside>
 
@@ -80,7 +75,7 @@
                 <article class="dining-card">
                     <h2>Pan-Asian Cuisine</h2>
                     <p>
-                        A small number of restaurants offer Pan-Asian cuisine, adding additional variety to the island’s dining options.
+                        A small number of restaurants offer Pan-Asian cuisine, adding additional variety to the island's dining options.
                     </p>
                 </article>
 
@@ -100,6 +95,19 @@
                 </p>
             </section>
         </main>
+
+        <section class="collapsible-section">
+            <h3 id="citation_header" class="collapsible">citations</h3>
+            <div class="content">
+                <p id="citation-1" class="citation">Saputra, T. (2025). <em>Chef garnishes grilled octopus with greens and lemon</em>. [Photograph]. Unsplash. https://unsplash.com/photos/chef-garnishes-grilled-octopus-with-greens-and-lemon-5umII9sO79s</p>
+                <p id="citation-2" class="citation">Hansel, L. (2019). <em>Assorted drinking glasses with beverages</em>. [Photograph]. Unsplash. https://unsplash.com/photos/assorted-drinking-glasses-with-beverages-645Z491UJ08</p>
+                <p id="citation-3" class="citation">Ahmad, S. (2020). <em>People sitting on chair in restaurant</em>. [Photograph]. Unsplash. https://unsplash.com/photos/people-sitting-on-chair-in-restaurant-kgjQ1AGDwE0</p>
+                <p id="citation-4" class="citation">Hansel, L. (2019). <em>Two filled glasses</em>. [Photograph]. Unsplash. https://unsplash.com/photos/two-filled-glasses-byzvm4J8Ljw</p>
+                <p id="citation-5" class="citation">Church, A. (2019). <em>A person holding up a cone of food on a beach</em>. [Photograph]. Unsplash. https://unsplash.com/photos/a-person-holding-up-a-cone-of-food-on-a-beach-O5U7VMQUzig</p>
+                <p id="citation-6" class="citation">Viktor, S. (2018). <em>Baked hamburger on plate</em>. [Photograph]. Unsplash. https://unsplash.com/photos/baked-hamburger-on-plate-SoLWlSNXuvg</p>
+                <p id="citation-7" class="citation">Ahmad, A. (2018). <em>Person holding skewered meat</em>. [Photograph]. Unsplash. https://unsplash.com/photos/person-holding-skewered-meat-JZ2QYos2YIg</p>
+            </div>
+        </section>
 
         <footer>
             <div class="footer-fixed">
@@ -134,6 +142,12 @@
                 localStorage.theme = document.body.classList.contains("dark-mode")
                     ? "dark"
                     : "light";
+            });
+
+            document.querySelectorAll(".collapsible").forEach(header => {
+                header.addEventListener("click", () => {
+                    header.parentElement.classList.toggle("active");
+                });
             });
         </script>
     </body>
